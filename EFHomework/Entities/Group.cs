@@ -15,7 +15,6 @@ namespace EFHomework.Entities
         public int StudentsCount { get; set; }
 
         public ICollection<Student> Students { get; set; }
-        public int FacultyId { get; set; }
         public Faculty Faculty { get; set; }
     }
 }

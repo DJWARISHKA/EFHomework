@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EFHomework.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -16,9 +17,10 @@ namespace EFHomework
 
         private static void Main(string[] args)
         {
-            var db = new AppContext();
             var faculties = get();
-            Console.WriteLine(faculties.Result[0].StudentsCount);
+            faculties.Wait();
+            var f = faculties.Result[0];
+            Console.WriteLine(f.Groups.Count());
         }
     }
 }
